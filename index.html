@@ -124,8 +124,8 @@
     </div>
 
     <script>
-        // رابط استضافة ACLClouds الخاص بك والموجه لبلجن Recon مباشرة
-        const SERVER_API_URL = "http://rxsmp-c5315cf5.game-nodes68.aclclouds.online:30091/api/command"; 
+        // تم تصحيح الرابط وإزالة المسار الإضافي ليتوافق مع بورت Recon المباشر
+        const SERVER_API_URL = "http://rxsmp-c5315cf5.game-nodes68.aclclouds.online:30091/"; 
 
         if (sessionStorage.getItem('isAdmin') === 'true') { showPanel(); }
 
@@ -189,9 +189,9 @@
                 });
                 
                 const data = await response.json();
-                logToConsole(commandText, data.output || "Done (No output from console).");
+                logToConsole(commandText, data.output || "Done (Executed successfully).");
             } catch (err) {
-                logToConsole(commandText, "فشل الاتصال! تأكد من أن السيرفر شغال على ACLClouds وأن منفذ البلجن مضبوط على 30091.");
+                logToConsole(commandText, "فشل الاتصال! تأكد من عمل ريستارت للسيرفر في ACLClouds مع كتابة أمر الحساب في الكونسول.");
             }
         }
     </script>
